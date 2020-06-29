@@ -27,6 +27,10 @@ Esse é o primeiro desafio da sequência de criação de um site de aulas partic
 - **Hover**
 - **CSS Transition**
 
+## 🙋‍♂️ Resultados 
+
+[![Image from Gyazo](https://i.gyazo.com/df17c9dd6f80af1a5c5be5f3d002ddc1.gif)](https://gyazo.com/df17c9dd6f80af1a5c5be5f3d002ddc1)
+
 # 📜 Licença 
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE]() para mais detalhes.
