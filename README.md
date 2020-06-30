@@ -7,11 +7,22 @@
 
 Os desafios foram feitos usando as seguintes tecnologias
 
+### 🔧 Ferramentas
+
 - [x] [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [x] [Node.js](https://nodejs.org/en/)
 - [x] [Nunjucks](https://mozilla.github.io/nunjucks/)
 - [x] [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5)
 - [x] [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)   
+
+### 📕 Libraries
+
+- [x] [Browsersync](https://www.browsersync.io/)
+- [x] [npm-run-all](https://www.npmjs.com/package/npm-run-all)
+
+### 🌉 API
+
+- [x] [Unsplash Source](https://source.unsplash.com/)
 
 # Desafio 4-1: Header ✅
 
@@ -31,9 +42,29 @@ Esse é o primeiro desafio da sequência de criação de um site de aulas partic
 
 [![Image from Gyazo](https://i.gyazo.com/df17c9dd6f80af1a5c5be5f3d002ddc1.gif)](https://gyazo.com/df17c9dd6f80af1a5c5be5f3d002ddc1)
 
+---
+
+# Desafio 4-2: Card do Professor ✅
+
+## 🔖 Atividades 
+
+Nessa etapa você de utilizar o browser-sync e criar um card para apresentação das informações do professor.
+
+## 📚 Conceitos estudados
+
+- **Libs**
+- **CSS Grid**
+- **CSS Animation**
+- **Pseudo-classes**
+- **Box-shadow**
+
+## 🙋‍♂️ Resultados
+
+[![Image from Gyazo](https://i.gyazo.com/ab50cb6e4e504c70f389812fdb994acc.gif)](https://gyazo.com/ab50cb6e4e504c70f389812fdb994acc)
+
 # 📜 Licença 
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE]() para mais detalhes.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](/LICENSE) para mais detalhes.
 
 ---
 
