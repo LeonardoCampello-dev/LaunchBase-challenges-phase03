@@ -156,3 +156,54 @@ header {
     margin-top: 8px;
     display: inline-block;
 }
+
+/* ============== form ============== */
+
+input {
+    width: 100%;
+    outline: none;
+    background-color: initial;
+    font-size: 18px;
+    font-weight: bold;
+    color: #CCC;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px rgba(0, 0, 0, 0.8) inset;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: #CCC !important;
+}
+
+input[type="checkbox"] {
+    width: initial;
+    margin-right: 4px;
+}
+
+select,
+input::placeholder {
+    background-color: initial;
+    color: #EEE;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+select {
+    outline: none;
+    padding: 8px 16px;
+    background-color: var(--label-color);
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 8px 32px;
+    background-color: var(--primary-color);
+    color: #FFF;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+

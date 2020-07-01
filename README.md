@@ -19,6 +19,7 @@ Os desafios foram feitos usando as seguintes tecnologias
 
 - [x] [Browsersync](https://www.browsersync.io/)
 - [x] [npm-run-all](https://www.npmjs.com/package/npm-run-all)
+- [x] [File System | Node.js](https://nodejs.org/api/fs.html)
 
 ### 🌉 API
 
@@ -62,6 +63,33 @@ Nessa etapa você de utilizar o browser-sync e criar um card para apresentação
 
 [![Image from Gyazo](https://i.gyazo.com/ab50cb6e4e504c70f389812fdb994acc.gif)](https://gyazo.com/ab50cb6e4e504c70f389812fdb994acc)
 
+---
+
+# Desafio 4-3: Formulário e Rota de cadastro do Professor ✅
+
+## 🔖 Atividades
+
+Nessa etapa você deve criar um formulário de cadastro do professor e uma rota do tipo post que irá realizar as validações e salvar os dados enviados.
+
+## 📚 Conceitos estudados
+
+- **Forms**
+- **Rotas**
+- **Validação no Back end**
+- **JavaScript Constructors**
+- **JSON**
+- **Método writeFile do Node fs**
+
+## 🙋‍♂️ Resultados
+
+[![Image from Gyazo](https://i.gyazo.com/66f5d80a18fc07830bcce502aabd250c.gif)](https://gyazo.com/66f5d80a18fc07830bcce502aabd250c)
+
+---
+**Form**
+
+[![Image from Gyazo](https://i.gyazo.com/b13898e1f6e3cdfccbfa770ba729dee9.png)](https://gyazo.com/b13898e1f6e3cdfccbfa770ba729dee9)
+
+---
 # 📜 Licença 
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](/LICENSE) para mais detalhes.

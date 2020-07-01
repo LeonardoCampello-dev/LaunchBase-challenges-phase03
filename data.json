@@ -1,0 +1,17 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "http://unsplash.com/trentzz",
+      "name": "Leonardo Campello",
+      "birth": 967248000000,
+      "educational_level": "Ensino Superior Completo",
+      "class_type": [
+        "Presencial",
+        "À distância"
+      ],
+      "services": "JavaScript, Node.js, ReactNative",
+      "created_at": 1593635669058
+    }
+  ]
+}

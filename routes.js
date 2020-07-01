@@ -1,18 +1,25 @@
 const express = require('express')
 const { Router } = require('express')
+const teachers = require('./teachers')
 
 const routes = express.Router()
 
 routes.get("/", (req, res) => {
-    res.redirect("teachers")
+    return res.redirect("teachers")
 })
 
 routes.get("/teachers", (req, res) => {
-    res.render("teachers/index")
+    return res.render("teachers/index")
 })
 
+routes.get("/teachers/create", (req, res) => {
+    return res.render("teachers/create")
+})
+
+routes.post("/teachers", teachers.post)
+
 routes.get("/students", (req, res) => {
-    res.render("students")
+    return res.render("students")
 })
 
 module.exports = routes
