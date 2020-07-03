@@ -90,10 +90,37 @@ Nessa etapa você deve criar um formulário de cadastro do professor e uma rota 
 [![Image from Gyazo](https://i.gyazo.com/b13898e1f6e3cdfccbfa770ba729dee9.png)](https://gyazo.com/b13898e1f6e3cdfccbfa770ba729dee9)
 
 ---
+
+# Desafio 4-4: Apresentação, edição e formatação dos dados de um professor ✅
+
+## 🔖 Atividades
+
+Nessa etapa você deve criar duas rotas: uma para apresentar os dados do professor (show) e outra para a edição dos dados cadastrados (edit). Além disso, realize a formatação dos dados cadastrados para a correta exibição no HTML
+
+## 📚 Conceitos estudados
+
+- **Formatação de dados (Intl, Split)**
+- **Rotas**
+- **Separar as funções das Rotas (exports)**
+- **Nunjucks {% include %} (Reaproveitamento de Form)**
+- **JavaScript Date**
+
+## 🙋‍♂️ Resultados 
+
+[![Image from Gyazo](https://i.gyazo.com/2766aed7c34fdf461fb5f3751d67aafb.gif)](https://gyazo.com/2766aed7c34fdf461fb5f3751d67aafb)
+
+---
+
+**Estrutura de pastas**
+
+[![Image from Gyazo](https://i.gyazo.com/766a5d43d91fdcb07430397dc0505d2a.png)](https://gyazo.com/766a5d43d91fdcb07430397dc0505d2a)
+
+---
+
 # 📜 Licença 
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](/LICENSE) para mais detalhes.
 
 ---
 
-Feito com 💚 by Leonardo Campello
+## Feito com 💚 by Leonardo Campello
