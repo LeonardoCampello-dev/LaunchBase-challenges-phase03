@@ -103,7 +103,6 @@ header {
 }
 
 .avatar {
-    background: url(https://source.unsplash.com/collection/10553730/500x500) no-repeat center center / cover;
     border-radius: 4px 0 0 4px;
 }
 
@@ -196,6 +195,7 @@ select {
     border-radius: 4px;
 }
 
+a.button,
 button[type="submit"] {
     width: 100%;
     padding: 8px 32px;
@@ -207,3 +207,9 @@ button[type="submit"] {
     margin-top: 16px;
 }
 
+a.button {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+}
