@@ -3,58 +3,71 @@
     {
       "id": 1,
       "avatar_url": "https://i.ibb.co/0qPrD6P/profile.jpg",
-      "name": "Leonardo Campello",
+      "name": "Leonardo Campello ",
       "birth": 967248000000,
-      "educational_level": "Ensino Superior Completo",
-      "class_type": [
-        "Presencial",
-        " À distância"
-      ],
-      "services": "JavaScript, Node.js, ReactNative",
-      "created_at": 1593635669058
+      "educational_level": "Ensino Médio Completo",
+      "class_type": "Presencial",
+      "services": "JavaScript, Node.js",
+      "created_at": 1593917592941
     },
     {
       "id": 2,
-      "avatar_url": "https://http2.mlstatic.com/matriz-de-bordado-meninas-super-poderosas-docinho-D_NQ_NP_734148-MLB26646564488_012018-F.jpg",
-      "name": "Bianca Artier",
-      "birth": 912124800000,
+      "avatar_url": "https://conteudo.imguol.com.br/c/noticias/45/2020/02/19/bill-gates-1582117373404_v2_1920x1280.jpg",
+      "name": "Bill Gates",
+      "birth": -447465600000,
       "educational_level": "Doutorado",
-      "class_type": "Presencial",
-      "services": "Design, UX, Marketing",
-      "created_at": 1593786576448
+      "class_type": " À distância",
+      "services": [
+        "Magnata",
+        " Empresário",
+        " Diretor Executivo"
+      ],
+      "created_at": 1593917677529
     },
     {
       "id": 3,
-      "avatar_url": "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-      "name": "Gabriela Campello",
-      "birth": 455155200000,
-      "educational_level": "Doutorado",
-      "class_type": "À distância",
-      "services": "Radiologia, Processos Gerenciais, Perícia Criminal",
-      "created_at": 1593786757244
+      "avatar_url": "https://i.ibb.co/2v4sBNR/Namorada.jpg",
+      "name": "Bianca Artier",
+      "birth": 912124800000,
+      "educational_level": "Ensino Superior Completo",
+      "class_type": " À distância",
+      "services": [
+        "Design",
+        " UX",
+        " Marketing"
+      ],
+      "created_at": 1593980835968
     },
     {
       "id": 4,
-      "avatar_url": "https://avatars2.githubusercontent.com/u/6643122?s=460&u=1e9e1f04b76fb5374e6a041f5e41dce83f3b5d92&v=4",
-      "name": "Mayk Brito",
-      "birth": 439171200000,
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6643122?s=400&u=1e9e1f04b76fb5374e6a041f5e41dce83f3b5d92&v=4",
+      "name": "Mayk Brito ",
+      "birth": 435974400000,
+      "educational_level": "Ensino Superior Completo",
+      "class_type": " À distância",
+      "services": [
+        "Full Stack",
+        " Rocketseat",
+        " LaunchBase"
+      ],
+      "created_at": 1593983099277
+    },
+    {
+      "id": 5,
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2254731?s=400&u=c34dfbafb54d6bb7c3f715ebe93a811cc7355771&v=4",
+      "name": "Diego Schell Fernandes",
+      "birth": 704937600000,
       "educational_level": "Ensino Superior Completo",
       "class_type": [
         "Presencial",
         " À distância"
       ],
-      "services": "Full Stack",
-      "created_at": 1593790510036
-    },
-    {
-      "id": 5,
-      "avatar_url": "https://http2.mlstadsadatic.com/matriz-de-bordado-meninas-super-poderosas-docinho-D_NQ_NP_734148-MLB26646564488_012018-F.jpg",
-      "name": "Bianca Artier",
-      "birth": 912124800000,
-      "educational_level": "Ensino Médio Completo",
-      "class_type": "Presencial",
-      "services": "Design, UX, Marketing",
-      "created_at": 1593792247444
+      "services": [
+        "JavaScript",
+        " Node.js",
+        " ReactNative"
+      ],
+      "created_at": 1593998202953
     }
   ]
 }

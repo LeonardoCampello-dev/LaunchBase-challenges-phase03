@@ -117,6 +117,59 @@ Nessa etapa você deve criar duas rotas: uma para apresentar os dados do profess
 
 ---
 
+# Desafio 4-5: HTTP: PUT e DELETE ✅
+
+## 🔖 Atividades
+
+Nessa etapa você irá implementar duas rotas: PUT e DELETE para a atualização e remoção, respectivamente, dos dados cadastrados de um professor.
+
+## 📚 Conceitos estudados
+
+- **Verbos HTTP**
+- **Funções de iteração**
+- **Sobrescrever métodos**
+
+## 🙋‍♂️ Resultados 
+
+**Rota PUT**
+
+[![Image from Gyazo](https://i.gyazo.com/258245bc678347e411e50c6816fbc9c2.gif)](https://gyazo.com/258245bc678347e411e50c6816fbc9c2)
+
+---
+
+**Rota DELETE**
+
+[![Image from Gyazo](https://i.gyazo.com/e77e2bfecda0184b60f05a4082006ccf.gif)](https://gyazo.com/e77e2bfecda0184b60f05a4082006ccf)
+
+---
+
+# Desafio 4-5: Listagem de professores ✅
+
+## 🔖 Atividades
+
+Nessa etapa você deve listar todos os professores salvos no arquivo json e apresentá-los em formato de tabela.
+
+## 📚 Conceitos estudados
+
+- **Rotas**
+- **HTML Table**
+- **Span**
+- **Estilização de tabela**
+
+## 🙋‍♂️ Resultados 
+
+**Listagem de professores**
+
+[![Image from Gyazo](https://i.gyazo.com/0813210b2165b9b89a58f8e75a598dbf.png)](https://gyazo.com/0813210b2165b9b89a58f8e75a598dbf)
+
+---
+
+**Funcionamento**
+
+[![Image from Gyazo](https://i.gyazo.com/395e9443f76638d7b8eb3d528c5622c4.gif)](https://gyazo.com/395e9443f76638d7b8eb3d528c5622c4)
+
+---
+
 # 📜 Licença 
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](/LICENSE) para mais detalhes.

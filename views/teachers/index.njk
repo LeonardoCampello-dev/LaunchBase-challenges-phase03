@@ -2,44 +2,34 @@
 
 {% block content %}
 
-<div class="card">
-    <section class="avatar" style="background: url(https://source.unsplash.com/collection/10553730/500x500) no-repeat center center / cover"></section>
-    <section class="details">
-        <h3>Detalhes</h3>
+<div class="card table-container">
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Acompanhamento</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>
+                    <span style="background-image: url({{ teacher.avatar_url }})"></span>
+                    {{ teacher.name }}
+                </td>
 
-        <div class="item">
-            <div>Nome Completo</div>
-            <div>Leonardo Campello</div>
-        </div>
-        
-        <div class="item">
-            <div>Idade</div>
-            <div>19</div>
-        </div>
-
-        <div class="item">
-            <div>Grau de escolaridade</div>
-            <div>Doutorado</div>
-        </div>        
-
-        <div class="item">
-            <div>Tipo de aula</div>
-            <div>Presencial</div>
-        </div>
-
-        <div class="item">
-            <div>Acompanhamento</div>
-            <div>
-                <span>JavaScript</span>
-                <span>Node.js</span>
-            </div>
-        </div>
-
-        <div class="item">
-            <div>Desde</div>
-            <div>04/05/2020</div>
-        </div>
-    </section>
+                <td>
+                    {% for service in teacher.services %}
+                    <span>{{ service }}</span>
+                    {% endfor %}
+                </td>
+                
+                <td><a href="/teachers/{{ teacher.id }}">Ver professor</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
 
