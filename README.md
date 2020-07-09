@@ -195,4 +195,4 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](/LICENSE) para m
 
 ---
 
-## Feito com 💚 by Leonardo Campello
+## Feito com 💚 por Leonardo Campello
