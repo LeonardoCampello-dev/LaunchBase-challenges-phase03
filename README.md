@@ -20,6 +20,7 @@ Os desafios foram feitos usando as seguintes tecnologias
 - [x] [Browsersync](https://www.browsersync.io/)
 - [x] [npm-run-all](https://www.npmjs.com/package/npm-run-all)
 - [x] [File System | Node.js](https://nodejs.org/api/fs.html)
+- [x] [method-override](https://www.npmjs.com/package/method-override)
 
 ### 🌉 API
 
@@ -41,7 +42,7 @@ Esse é o primeiro desafio da sequência de criação de um site de aulas partic
 
 ## 🙋‍♂️ Resultados 
 
-[![Image from Gyazo](https://i.gyazo.com/df17c9dd6f80af1a5c5be5f3d002ddc1.gif)](https://gyazo.com/df17c9dd6f80af1a5c5be5f3d002ddc1)
+![header](./previews/navbar.gif)
 
 ---
 
@@ -61,7 +62,7 @@ Nessa etapa você de utilizar o browser-sync e criar um card para apresentação
 
 ## 🙋‍♂️ Resultados
 
-[![Image from Gyazo](https://i.gyazo.com/ab50cb6e4e504c70f389812fdb994acc.gif)](https://gyazo.com/ab50cb6e4e504c70f389812fdb994acc)
+![teacher-card](previews/teacher-card.png)
 
 ---
 
@@ -82,12 +83,12 @@ Nessa etapa você deve criar um formulário de cadastro do professor e uma rota 
 
 ## 🙋‍♂️ Resultados
 
-[![Image from Gyazo](https://i.gyazo.com/66f5d80a18fc07830bcce502aabd250c.gif)](https://gyazo.com/66f5d80a18fc07830bcce502aabd250c)
+![save-data](previews/teacher-registration.gif)
 
 ---
 **Form**
 
-[![Image from Gyazo](https://i.gyazo.com/b13898e1f6e3cdfccbfa770ba729dee9.png)](https://gyazo.com/b13898e1f6e3cdfccbfa770ba729dee9)
+![form](previews/form.png)
 
 ---
 
@@ -107,13 +108,13 @@ Nessa etapa você deve criar duas rotas: uma para apresentar os dados do profess
 
 ## 🙋‍♂️ Resultados 
 
-[![Image from Gyazo](https://i.gyazo.com/2766aed7c34fdf461fb5f3751d67aafb.gif)](https://gyazo.com/2766aed7c34fdf461fb5f3751d67aafb)
+![show](/previews/show.gif)
 
 ---
 
 **Estrutura de pastas**
 
-[![Image from Gyazo](https://i.gyazo.com/766a5d43d91fdcb07430397dc0505d2a.png)](https://gyazo.com/766a5d43d91fdcb07430397dc0505d2a)
+![folders](/previews/folders.png)
 
 ---
 
@@ -133,17 +134,17 @@ Nessa etapa você irá implementar duas rotas: PUT e DELETE para a atualização
 
 **Rota PUT**
 
-[![Image from Gyazo](https://i.gyazo.com/258245bc678347e411e50c6816fbc9c2.gif)](https://gyazo.com/258245bc678347e411e50c6816fbc9c2)
+![edit](/previews/edit.gif)
 
 ---
 
 **Rota DELETE**
 
-[![Image from Gyazo](https://i.gyazo.com/e77e2bfecda0184b60f05a4082006ccf.gif)](https://gyazo.com/e77e2bfecda0184b60f05a4082006ccf)
+![delete](previews/delete.gif)
 
 ---
 
-# Desafio 4-5: Listagem de professores ✅
+# Desafio 4-6: Listagem de professores ✅
 
 ## 🔖 Atividades
 
@@ -160,13 +161,31 @@ Nessa etapa você deve listar todos os professores salvos no arquivo json e apre
 
 **Listagem de professores**
 
-[![Image from Gyazo](https://i.gyazo.com/0813210b2165b9b89a58f8e75a598dbf.png)](https://gyazo.com/0813210b2165b9b89a58f8e75a598dbf)
+![teacher-list](previews/teacher-list.png)
 
 ---
 
 **Funcionamento**
 
-[![Image from Gyazo](https://i.gyazo.com/395e9443f76638d7b8eb3d528c5622c4.gif)](https://gyazo.com/395e9443f76638d7b8eb3d528c5622c4)
+![teacher-list](previews/teacher-list.gif)
+
+---
+
+# Desafio 4-7: Estruturando estudantes ✅
+
+## 🔖 Atividades
+
+Nessa etapa você deve reaproveitar para os estudantes toda a estrutura já criada para os professores. Além disso, deve implementar a lógica do menu ativo.
+
+## 📚 Conceitos estudados
+
+- **Estrutura de projeto**
+- **Manipulação da DOM**
+- **Formatação de dados**
+
+## 🙋‍♂️ Resultados 
+
+![students](previews/students.gif)
 
 ---
 
