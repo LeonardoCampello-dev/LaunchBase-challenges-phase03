@@ -42,7 +42,7 @@ Esse é o primeiro desafio da sequência de criação de um site de aulas partic
 
 ## 🙋‍♂️ Resultados 
 
-![header](./previews/navbar.gif)
+![Header](./previews/navbar.gif)
 
 ---
 
@@ -62,7 +62,7 @@ Nessa etapa você de utilizar o browser-sync e criar um card para apresentação
 
 ## 🙋‍♂️ Resultados
 
-![teacher-card](previews/teacher-card.png)
+![Teacher-card](previews/teacher-card.png)
 
 ---
 
@@ -83,12 +83,12 @@ Nessa etapa você deve criar um formulário de cadastro do professor e uma rota 
 
 ## 🙋‍♂️ Resultados
 
-![save-data](previews/teacher-registration.gif)
+![Save](previews/teacher-registration.gif)
 
 ---
 **Form**
 
-![form](previews/form.png)
+![Form](previews/form.png)
 
 ---
 
@@ -108,13 +108,13 @@ Nessa etapa você deve criar duas rotas: uma para apresentar os dados do profess
 
 ## 🙋‍♂️ Resultados 
 
-![show](/previews/show.gif)
+![Show](/previews/show.gif)
 
 ---
 
 **Estrutura de pastas**
 
-![folders](/previews/folders.png)
+![Folders](/previews/folders.png)
 
 ---
 
@@ -134,13 +134,13 @@ Nessa etapa você irá implementar duas rotas: PUT e DELETE para a atualização
 
 **Rota PUT**
 
-![edit](/previews/edit.gif)
+![Edit](/previews/edit.gif)
 
 ---
 
 **Rota DELETE**
 
-![delete](previews/delete.gif)
+![Delete](previews/delete.gif)
 
 ---
 
@@ -161,13 +161,13 @@ Nessa etapa você deve listar todos os professores salvos no arquivo json e apre
 
 **Listagem de professores**
 
-![teacher-list](previews/teacher-list.png)
+![Teacher-list-1](previews/teacher-list.png)
 
 ---
 
 **Funcionamento**
 
-![teacher-list](previews/teacher-list.gif)
+![Teacher-list](previews/teacher-list.gif)
 
 ---
 
@@ -185,14 +185,12 @@ Nessa etapa você deve reaproveitar para os estudantes toda a estrutura já cria
 
 ## 🙋‍♂️ Resultados 
 
-![students](previews/students.gif)
+![Students](previews/students.gif)
 
 ---
 
 # 📜 Licença 
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](/LICENSE) para mais detalhes.
-
----
+Realizado em 2020. Esse projeto está sob a [licença MIT](/LICENSE).
 
 ## Feito com 💚 por Leonardo Campello
