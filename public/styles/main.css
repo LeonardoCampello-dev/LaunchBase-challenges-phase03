@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-    --primary-color: #FA6484;
-    --secondary-color: #157DFE;
-    --salmon: #FFD4C2; 
-    --gray-color: #EEEEEE
+    --primary-color: #F09B53;
+    --secondary-color: #403F39;
+    --bottom-line: #562D32;
+    --gray-color: #eee
 }
 
 * {
@@ -15,26 +15,42 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--gray-color);
+    background-image: url(https://cdn.dribbble.com/users/274876/screenshots/12285845/media/6a3dfde9b79e6151fb12716d124dc786.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
 
 header {
-    background-color: var(--salmon);
+    background-color: var(--gray-color);
     width: 100%;
     padding: 32px;
-    text-align: center;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+header span img {
+    width: 48px;
+    height: 48px;
 }
 
 .links {
     text-align: center;
     font-size: 24px;
+    margin-left: 48px;
 }
 
 .links a {
     color: var(--primary-color);
     text-decoration: none;
     position: relative;
+}
+
+.links a:hover {
+    color: var(--secondary-color);
+    transition: 200ms;
 }
 
 a.active {
@@ -45,42 +61,12 @@ a.active {
     margin-left: 24px;
 }
 
-.links a::after {
-    content: "";
-    width: 2px;
-    height: 0;
-    background-color: var(--secondary-color);
-    position: absolute;
-    left: -6px;
-    bottom: -2px;
-}
-
-.links a::before {
-    content: "";
-    width: 0;
-    height: 2.5px;
-    background-color: var(--secondary-color);
-    position: absolute;
-    bottom: -2px;
-    left: -6px;
-}
-
-.links a:hover::after {
-    height: 100%;
-    transition: height 200ms ease-in-out;
-}
-
-.links a:hover::before {
-    width: 110%;
-    transition: width 200ms ease-in-out;
-}
-
 /* ============== card ============== */
 
 .card {
     width: 900px;
     min-height: 500px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     border-radius: 4px;
     position: relative;
     margin: 64px auto;
@@ -88,7 +74,7 @@ a.active {
     display: grid;
     grid-template-columns: 40% 60%;
 
-    box-shadow: 1px 1px 2px var(--salmon);
+    box-shadow: 1px 1px 2px var(--bottom-line);
 
     animation: side 250ms ease-in-out;
 }
@@ -114,7 +100,7 @@ a.active {
 
 .details .item {
     padding: 16px 0;
-    border-bottom: 1.5px solid var(--salmon);
+    border-bottom: 1.5px solid var(--bottom-line);
 }
 
 .details .item:last-child {
@@ -137,7 +123,7 @@ a.active {
 .details .item div:nth-child(2) {
     font-size: 18px;
     font-weight: bold;
-    color: #CCC;
+    color: #ccc;
 }
 
 .details h3 {
@@ -166,7 +152,7 @@ input {
     background-color: initial;
     font-size: 18px;
     font-weight: bold;
-    color: #CCC;
+    color: #ccc;
 }
 
 input:-webkit-autofill {
@@ -174,7 +160,7 @@ input:-webkit-autofill {
 }
 
 input:-webkit-autofill {
-    -webkit-text-fill-color: #CCC !important;
+    -webkit-text-fill-color: #ccc !important;
 }
 
 input[type="checkbox"] {
@@ -202,9 +188,11 @@ button[type="submit"] {
     width: 50%;
     padding: 8px 16px;
     background-color: var(--primary-color);
-    color: #FFF;
-    font-size: 16px;
-    letter-spacing: 0.8px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
     border-radius: 4px;
     cursor: pointer;
     margin-top: 16px;
@@ -250,7 +238,7 @@ a.button {
 
 .table-container > a:hover {
     background-color: var(--primary-color);
-    transition: 300ms;
+    transition: 200ms;
 }
 
 .table-container thead tr th {
@@ -269,7 +257,7 @@ a.button {
 
 th, td {
     padding: 16px;
-    border-bottom: 1px solid var(--salmon);
+    border-bottom: 1px solid var(--bottom-line);
     text-align: center;
 }
 
@@ -328,7 +316,7 @@ tbody tr td:last-child a {
 
 tbody tr td:last-child a:hover {
     background-color: var(--primary-color);
-    transition: 300ms;    
+    transition: 200ms;    
 }
 
 tbody tr:last-child td {

@@ -42,7 +42,7 @@ Esse é o primeiro desafio da sequência de criação de um site de aulas partic
 
 ## 🙋‍♂️ Resultados 
 
-![Header](./previews/navbar.gif)
+![navbar](./.github/navbar.gif)
 
 ---
 
@@ -62,7 +62,7 @@ Nessa etapa você de utilizar o browser-sync e criar um card para apresentação
 
 ## 🙋‍♂️ Resultados
 
-![Teacher-card](previews/teacher-card.png)
+![Teacher-card](./.github/teacher-card.png)
 
 ---
 
@@ -83,12 +83,12 @@ Nessa etapa você deve criar um formulário de cadastro do professor e uma rota 
 
 ## 🙋‍♂️ Resultados
 
-![Save](previews/teacher-registration.gif)
+![Save](./.github/teacher-registration.gif)
 
 ---
 **Form**
 
-![Form](previews/form.png)
+![Form](./.github/form.png)
 
 ---
 
@@ -108,13 +108,13 @@ Nessa etapa você deve criar duas rotas: uma para apresentar os dados do profess
 
 ## 🙋‍♂️ Resultados 
 
-![Show](/previews/show.gif)
+![Show](./.github/show.gif)
 
 ---
 
 **Estrutura de pastas**
 
-![Folders](/previews/folders.png)
+![Folders](./.github/folders.png)
 
 ---
 
@@ -134,13 +134,13 @@ Nessa etapa você irá implementar duas rotas: PUT e DELETE para a atualização
 
 **Rota PUT**
 
-![Edit](/previews/edit.gif)
+![Edit](./.github/edit.gif)
 
 ---
 
 **Rota DELETE**
 
-![Delete](previews/delete.gif)
+![Delete](./.github/delete.gif)
 
 ---
 
@@ -161,13 +161,13 @@ Nessa etapa você deve listar todos os professores salvos no arquivo json e apre
 
 **Listagem de professores**
 
-![Teacher-list-1](previews/teacher-list.png)
+![Teacher-list-1](./.github/teacher-list.png)
 
 ---
 
 **Funcionamento**
 
-![Teacher-list](previews/teacher-list.gif)
+![Teacher-list](./.github/teacher-list.gif)
 
 ---
 
@@ -185,7 +185,7 @@ Nessa etapa você deve reaproveitar para os estudantes toda a estrutura já cria
 
 ## 🙋‍♂️ Resultados 
 
-![Students](previews/students.gif)
+![Students](./.github/students.gif)
 
 ---
 
