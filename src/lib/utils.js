@@ -25,7 +25,7 @@ module.exports = {
             year,
             iso: `${year}-${month}-${day}`,
             bDay: `${day}/${month}`,
-            brDate: `${day}/${month}/${year}`
+            format: `${day}/${month}/${year}`
         }
     },
     grade: (schoolYear) => {

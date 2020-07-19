@@ -32,9 +32,9 @@
         <div class="item">
             <div>Acompanhamento</div>
             <div>
-                {% for service in teacher.services %}
+                {% for subject in teacher.subjects_taught %}
 
-                <span>{{ service }}</span>
+                <span>{{ subject }}</span>
                 
                 {% endfor %}
             </div>
