@@ -1,3 +1,4 @@
+const Teacher = require('../models/Teacher')
 const { age, date } = require('../../lib/utils')
 
 module.exports = {
@@ -14,7 +15,9 @@ module.exports = {
             if (req.body[key] == "") return res.send("Por favor, preencha todos os campos do formulário!")
         }
     
-        let { avatar_url, name, birth, educational_level, class_type, services } = req.body   
+        Teacher.create(req.body, (teacher) => {
+            return res.redirect(`/teachers/${teacher.id}`)
+        })   
     },
     show(req, res) {
         return   
