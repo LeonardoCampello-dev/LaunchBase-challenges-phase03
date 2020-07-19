@@ -3,7 +3,7 @@ const { date } = require('../../lib/utils')
 
 module.exports = {
     all(callback) {
-        db.query(`SELECT * FROM teachers`, (err, results) => {
+        db.query(`SELECT * FROM students`, (err, results) => {
             if (err) throw `Database error! ${err}`
 
             callback(results.rows)
@@ -11,26 +11,24 @@ module.exports = {
     },
     create(data, callback) {
         const query = `
-        INSERT INTO teachers (
+        INSERT INTO students (
             avatar_url,
             name,
+            email,
             birth,
-            educational_level,
-            class_type,
-            subjects_taught,
-            created_at
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7)
+            school_year,
+            workload
+        ) VALUES ($1, $2, $3, $4, $5, $6)
         RETURNING id
     `
 
         const values = [
             data.avatar_url,
             data.name,
+            data.email,
             date(data.birth).iso,
-            data.educational_level,
-            data.class_type,
-            data.subjects_taught,
-            date(Date.now()).iso
+            data.school_year,
+            data.workload
         ]
 
         db.query(query, values, (err, results) => {
@@ -40,7 +38,7 @@ module.exports = {
         })
     },
     find(id, callback) {
-        db.query(`SELECT * FROM teachers WHERE id = $1`, [id], (err, results) => {
+        db.query(`SELECT * FROM students WHERE id = $1`, [id], (err, results) => {
             if (err) throw `Database error! ${err}`
 
             callback(results.rows[0])
@@ -48,23 +46,23 @@ module.exports = {
     },
     update(data, callback) {
         const query = `
-        UPDATE teachers SET
+        UPDATE students SET
             avatar_url = ($1),
             name = ($2),
-            birth = ($3),
-            educational_level = ($4),
-            class_type = ($5),
-            subjects_taught = ($6)
+            email = ($3),
+            birth = ($4),
+            school_year = ($5),
+            workload = ($6)
         WHERE id = $7
         `
 
         const values = [
             data.avatar_url,
             data.name,
+            data.email,
             data.birth,
-            data.educational_level,
-            data.class_type,
-            data.subjects_taught,
+            data.school_year,
+            data.workload,
             data.id
         ]
 
@@ -75,7 +73,7 @@ module.exports = {
         })
     },
     delete(id, callback) {
-        db.query(`DELETE FROM teachers WHERE id = $1`, [id], (err, results) => {
+        db.query(`DELETE FROM students WHERE id = $1`, [id], (err, results) => {
             if (err) throw `Database error! ${err}`
 
             return callback()
