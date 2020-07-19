@@ -27,7 +27,7 @@ module.exports = {
     },
     show(req, res) {
         Teacher.find(req.params.id, (teacher) => {
-            if (!teacher) return res.send("Instructor not found!")
+            if (!teacher) return res.send("Professor não encontrado!")
 
             teacher.age = age(teacher.birth)
             teacher.subjects_taught = teacher.subjects_taught.split(",")
@@ -43,11 +43,22 @@ module.exports = {
         for (let key of keys) {
             if (req.body[key] == "") return res.send("Por favor, preencha todos os campos do formulário!")
         }
-    
-        return
+
+        Teacher.find(req.params.id, (teacher) => {
+            if (!teacher) return res.send("Professor não encontrado!")
+
+            teacher.birth = date(teacher.birth).iso
+            teacher.subjects_taught = teacher.subjects_taught.split(",")
+
+            teacher.created_at = date(teacher.created_at).format
+
+            return res.render("teachers/edit", { teacher })
+        }) 
     },
     update(req, res) {
-        return
+        Teacher.update(req.body, () => {
+            return res.redirect(`/teachers/${req.body.id}`)
+        })
     },
     delete(req, res) {
         return
