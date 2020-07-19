@@ -55,6 +55,8 @@ header span img {
 
 a.active {
     font-weight: bold;
+    border-bottom: 2px solid var(--secondary-color);
+    border-radius: 10%;
 }
 
 .links a + a {
