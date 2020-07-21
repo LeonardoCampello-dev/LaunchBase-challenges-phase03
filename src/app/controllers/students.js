@@ -12,7 +12,9 @@ module.exports = {
         })
     },
     create(req, res) {
-        return res.render("students/create")       
+        Student.teachersSelectOptions((options) => {
+            return res.render("students/create", {  teachersSelectOptions: options })    
+        })
     },
     post(req, res) {
         const keys = Object.keys(req.body)
@@ -32,7 +34,9 @@ module.exports = {
             student.birth = date(student.birth).bDay
             student.school_year = grade(student.school_year)
 
-            return res.render("students/show", { student })
+            Student.teachersSelectOptions((options) => {
+                return res.render("students/show", { student, teachersSelectOptions: options })
+            })            
         })   
     },
     edit(req, res) {
@@ -47,7 +51,9 @@ module.exports = {
 
             student.birth = date(student.birth).iso
 
-            return res.render("students/edit", { student })
+            Student.teachersSelectOptions((options) => {
+                return res.render("students/edit", {  student, teachersSelectOptions: options })    
+            })
         }) 
     },
     update(req, res) {

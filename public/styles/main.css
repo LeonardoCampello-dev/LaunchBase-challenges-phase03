@@ -234,13 +234,38 @@ a.button {
 }
 
 .table-container > a {
-    margin-bottom: 16px;
     display: inline-block;
+    margin-bottom: 24px;
 }
 
-.table-container > a:hover {
-    background-color: var(--primary-color);
-    transition: 200ms;
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.table-container .header a {
+    text-align: center;
+    width: 128px;
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.table-container .header form input {
+    padding: 4px 8px;
+    border: 1px solid var(--bottom-line);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.table-container .header button {
+    width: 128px;
+    margin: 0;
 }
 
 .table-container thead tr th {
@@ -249,10 +274,7 @@ a.button {
     font-size: 14px;
 }
 
-.table-container thead tr th:nth-child(2) {
-    color: var(--primary-color);
-}
-
+.table-container thead tr th:nth-child(2),
 .table-container thead tr th:last-child {
     color: var(--primary-color);
 }
@@ -303,9 +325,11 @@ tbody tr td:nth-child(2) a:hover {
 
 tbody tr td:nth-child(3) {
     color: #fff;
+    font-weight: bold;
 }
 
 .table-container > a,
+.table-container .header a,
 tbody tr td:last-child a {
     color: #fff;
     background-color: var(--secondary-color);
@@ -316,6 +340,8 @@ tbody tr td:last-child a {
     text-decoration: none;
 }
 
+.table-container > a:hover,
+.table-container .header a:hover,
 tbody tr td:last-child a:hover {
     background-color: var(--primary-color);
     transition: 200ms;    
