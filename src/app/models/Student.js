@@ -46,7 +46,7 @@ module.exports = {
         LEFT JOIN teachers ON (students.teacher_id = teachers.id)
         WHERE students.id = $1
         `
-        
+
         db.query(query, [id], (err, results) => {
             if (err) throw `Database error! ${err}`
 
@@ -91,7 +91,7 @@ module.exports = {
         })
     },
     teachersSelectOptions(callback) {
-        
+
         db.query(`SELECT name, id FROM teachers`, (err, results) => {
             if (err) throw `Database error! ${err}`
 

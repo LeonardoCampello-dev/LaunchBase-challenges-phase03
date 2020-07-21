@@ -8,7 +8,7 @@
         <a href="/teachers/create">Novo professor</a>
 
         <form action="/teachers" method="GET">
-            <input type="text" name="filter" placeholder="Nome ou Disciplina" value="{{ filter }}">
+            <input type="text" name="filter" placeholder="Nome ou Disciplina">
             <button type="submit">Filtrar</button>
         </form>
     </div>
@@ -37,7 +37,7 @@
 
                 <td>{{ teacher.total_students }}</td>
                 
-                <td><a href="/teachers/{{ teacher.id }}">Ver</a></td>
+                <td><a href="/teachers/{{ teacher.id }}">Ver professor</a></td>
             </tr>
             {% endfor %}
         </tbody>

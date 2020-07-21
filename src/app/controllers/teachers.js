@@ -10,7 +10,7 @@ module.exports = {
                 for (let teacher of teachers) {
                     teacher.subjects_taught = teacher.subjects_taught.split(",")
                 }
-                
+
                 return res.render("teachers/index", { filter, teachers })
             })
         } else {
@@ -18,13 +18,13 @@ module.exports = {
                 for (let teacher of teachers) {
                     teacher.subjects_taught = teacher.subjects_taught.split(",")
                 }
-                
+
                 return res.render("teachers/index", { teachers })
             })
         }
     },
     create(req, res) {
-        return res.render("teachers/create")       
+        return res.render("teachers/create")
     },
     post(req, res) {
         const keys = Object.keys(req.body)
@@ -32,10 +32,10 @@ module.exports = {
         for (let key of keys) {
             if (req.body[key] == "") return res.send("Por favor, preencha todos os campos do formulário!")
         }
-    
+
         Teacher.create(req.body, (teacher) => {
             return res.redirect(`/teachers/${teacher.id}`)
-        })   
+        })
     },
     show(req, res) {
         Teacher.find(req.params.id, (teacher) => {
@@ -47,7 +47,7 @@ module.exports = {
             teacher.created_at = date(teacher.created_at).format
 
             return res.render("teachers/show", { teacher })
-        })   
+        })
     },
     edit(req, res) {
         const keys = Object.keys(req.body)
@@ -65,7 +65,7 @@ module.exports = {
             teacher.created_at = date(teacher.created_at).format
 
             return res.render("teachers/edit", { teacher })
-        }) 
+        })
     },
     update(req, res) {
         Teacher.update(req.body, () => {

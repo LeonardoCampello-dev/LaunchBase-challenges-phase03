@@ -10,7 +10,7 @@ module.exports = {
         GROUP BY teachers.id
         ORDER BY teachers.id
         `
-        
+
         db.query(query, (err, results) => {
             if (err) throw `Database error! ${err}`
 
@@ -63,7 +63,7 @@ module.exports = {
         GROUP BY teachers.id
         ORDER BY teachers.id
         `
-        
+
         db.query(query, (err, results) => {
             if (err) throw `Database error! ${err}`
 
