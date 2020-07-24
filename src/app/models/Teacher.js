@@ -60,6 +60,7 @@ module.exports = {
         FROM teachers
         LEFT JOIN students ON (students.teacher_id = teachers.id)
         WHERE teachers.name ILIKE '%${filter}%' 
+        OR teachers.subjects_taught ILIKE '%${filter}%'
         GROUP BY teachers.id
         ORDER BY teachers.id
         `
@@ -105,4 +106,30 @@ module.exports = {
             return callback()
         })
     },
+    paginate(params) {
+        let { filter, limit, offset, callback } = params
+
+        let query = `
+        SELECT teachers.*, count(students) AS total_students
+        FROM teachers
+        LEFT JOIN students ON (students.teacher_id = teachers.id)
+        `
+
+        if (filter) {
+            query = `${query}
+            WHERE teachers.name ILIKE '%${filter}%'
+            OR teachers.subjects_taught ILIKE '%${filter}%'
+            `
+        }
+
+        query = `${query}
+        GROUP BY teachers.id LIMIT $1 OFFSET $2
+        `
+
+        db.query(query, [limit, offset], (err, results) => {
+            if (err) throw `Database error! ${err}`
+
+            callback(results.rows)
+        })
+    }
 }

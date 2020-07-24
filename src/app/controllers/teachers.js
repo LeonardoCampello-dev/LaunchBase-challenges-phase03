@@ -3,25 +3,45 @@ const { age, date } = require('../../lib/utils')
 
 module.exports = {
     index(req, res) {
-        const { filter } = req.query
+        let { filter, page, limit } = req.query
 
-        if (filter) {
-            Teacher.findBy(filter, (teachers) => {
+        page = page || 1
+        limit = limit || 2
+        offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(teachers) {
                 for (let teacher of teachers) {
                     teacher.subjects_taught = teacher.subjects_taught.split(",")
                 }
 
-                return res.render("teachers/index", { filter, teachers })
-            })
-        } else {
-            Teacher.all((teachers) => {
-                for (let teacher of teachers) {
-                    teacher.subjects_taught = teacher.subjects_taught.split(",")
-                }
-
-                return res.render("teachers/index", { teachers })
-            })
+                return res.render("teachers/index", { filter, teachers})
+            }
         }
+
+        Teacher.paginate(params)
+
+        // if (filter) {
+        //     Teacher.findBy(filter, (teachers) => {
+        //         for (let teacher of teachers) {
+        //             teacher.subjects_taught = teacher.subjects_taught.split(",")
+        //         }
+
+        //         return res.render("teachers/index", { filter, teachers })
+        //     })
+        // } else {
+        //     Teacher.all((teachers) => {
+        //         for (let teacher of teachers) {
+        //             teacher.subjects_taught = teacher.subjects_taught.split(",")
+        //         }
+
+        //         return res.render("teachers/index", { teachers })
+        //     })
+        // }
     },
     create(req, res) {
         return res.render("teachers/create")
