@@ -3,7 +3,30 @@
     <img src="https://camo.githubusercontent.com/268b1344409fac98c4eeda520482b6910c4ddcba/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f676f6c64656e2d77696e642f626f6f7463616d702d6c61756e6368626173652f6c6f676f2e706e67">
 </h1>
 
-# 🚀 Tecnologias utilizadas 
+![author](https://img.shields.io/badge/Autor-Leonardo%20Campello-brightgreen)
+![license](https://img.shields.io/github/license/LeonardoCampello-dev/LaunchBase-challenges-phase03)
+![GitHub repo size](https://img.shields.io/github/repo-size/LeonardoCampello-dev/LaunchBase-challenges-phase03)
+
+## 📌 Índice dos desafios 🏆
+
+**Criando aplicação** 📝
+
+- [x] [4-1: Header](#desafio-4-1-header-)
+- [x] [4-2: Card do Professor](#desafio-4-2-card-do-professor-)
+- [x] [4-3: Formulário e Rota de cadastro do Professor](#desafio-4-3-formulário-e-rota-de-cadastro-do-professor-)
+- [x] [4-4: Apresentação, edição e formatação dos dados de um professor](#desafio-4-4-apresentação-edição-e-formatação-dos-dados-de-um-professor-)
+- [x] [4-5: HTTP: PUT e DELETE](#desafio-4-5-http-put-e-delete-)
+- [x] [4-6: Listagem de professores](#desafio-4-6-listagem-de-professores-)
+- [x] [4-7: Estruturando estudantes](#desafio-4-7-estruturando-estudantes-)
+
+**Persistindo dados** 📁
+
+- [x] [5-1: Refatorando aplicação e configurando o BD](#desafio-5-1-refatorando-aplicação-e-configurando-o-bd-)
+- [x] [5-2: Interagindo com o BD](#desafio-5-2-interagindo-com-o-bd-)
+- [x] [5-3: Relacionamentos e filtros no BD](#desafio-5-3-relacionamentos-e-filtros-no-bd-)
+- [x] [5-4: Paginação de resultados no BD](#desafio-5-4-paginação-de-resultados-no-bd-)
+  
+## 🚀 Tecnologias utilizadas 
 
 Os desafios foram feitos usando as seguintes tecnologias
 
@@ -12,8 +35,7 @@ Os desafios foram feitos usando as seguintes tecnologias
 - [x] [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [x] [Node.js](https://nodejs.org/en/)
 - [x] [Nunjucks](https://mozilla.github.io/nunjucks/)
-- [x] [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5)
-- [x] [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)   
+- [x] [PostgreSQL](https://www.postgresql.org/)
 
 ### 📕 Libraries
 
@@ -21,12 +43,13 @@ Os desafios foram feitos usando as seguintes tecnologias
 - [x] [npm-run-all](https://www.npmjs.com/package/npm-run-all)
 - [x] [File System | Node.js](https://nodejs.org/api/fs.html)
 - [x] [method-override](https://www.npmjs.com/package/method-override)
+- [x] [node-postgres](https://www.npmjs.com/package/pg) 
 
 ### 🌉 API
 
 - [x] [Unsplash Source](https://source.unsplash.com/)
 
-# Desafio 4-1: Header ✅
+## Desafio 4-1: Header ✅ 
 
 ## 🔖 Atividades 
 
@@ -40,13 +63,9 @@ Esse é o primeiro desafio da sequência de criação de um site de aulas partic
 - **Hover**
 - **CSS Transition**
 
-## 🙋‍♂️ Resultados 
-
-![navbar](./.github/navbar.gif)
-
 ---
 
-# Desafio 4-2: Card do Professor ✅
+## Desafio 4-2: Card do Professor ✅ 
 
 ## 🔖 Atividades 
 
@@ -60,13 +79,9 @@ Nessa etapa você de utilizar o browser-sync e criar um card para apresentação
 - **Pseudo-classes**
 - **Box-shadow**
 
-## 🙋‍♂️ Resultados
-
-![Teacher-card](./.github/teacher-card.png)
-
 ---
 
-# Desafio 4-3: Formulário e Rota de cadastro do Professor ✅
+## Desafio 4-3: Formulário e Rota de cadastro do Professor ✅ 
 
 ## 🔖 Atividades
 
@@ -81,18 +96,9 @@ Nessa etapa você deve criar um formulário de cadastro do professor e uma rota 
 - **JSON**
 - **Método writeFile do Node fs**
 
-## 🙋‍♂️ Resultados
-
-![Save](./.github/teacher-registration.gif)
-
----
-**Form**
-
-![Form](./.github/form.png)
-
 ---
 
-# Desafio 4-4: Apresentação, edição e formatação dos dados de um professor ✅
+## Desafio 4-4: Apresentação, edição e formatação dos dados de um professor ✅ 
 
 ## 🔖 Atividades
 
@@ -106,19 +112,9 @@ Nessa etapa você deve criar duas rotas: uma para apresentar os dados do profess
 - **Nunjucks {% include %} (Reaproveitamento de Form)**
 - **JavaScript Date**
 
-## 🙋‍♂️ Resultados 
-
-![Show](./.github/show.gif)
-
 ---
 
-**Estrutura de pastas**
-
-![Folders](./.github/folders.png)
-
----
-
-# Desafio 4-5: HTTP: PUT e DELETE ✅
+## Desafio 4-5: HTTP: PUT e DELETE ✅ 
 
 ## 🔖 Atividades
 
@@ -130,21 +126,9 @@ Nessa etapa você irá implementar duas rotas: PUT e DELETE para a atualização
 - **Funções de iteração**
 - **Sobrescrever métodos**
 
-## 🙋‍♂️ Resultados 
-
-**Rota PUT**
-
-![Edit](./.github/edit.gif)
-
 ---
 
-**Rota DELETE**
-
-![Delete](./.github/delete.gif)
-
----
-
-# Desafio 4-6: Listagem de professores ✅
+## Desafio 4-6: Listagem de professores ✅ 
 
 ## 🔖 Atividades
 
@@ -157,21 +141,9 @@ Nessa etapa você deve listar todos os professores salvos no arquivo json e apre
 - **Span**
 - **Estilização de tabela**
 
-## 🙋‍♂️ Resultados 
-
-**Listagem de professores**
-
-![Teacher-list-1](./.github/teacher-list.png)
-
 ---
 
-**Funcionamento**
-
-![Teacher-list](./.github/teacher-list.gif)
-
----
-
-# Desafio 4-7: Estruturando estudantes ✅
+## Desafio 4-7: Estruturando estudantes ✅ 
 
 ## 🔖 Atividades
 
@@ -183,9 +155,94 @@ Nessa etapa você deve reaproveitar para os estudantes toda a estrutura já cria
 - **Manipulação da DOM**
 - **Formatação de dados**
 
-## 🙋‍♂️ Resultados 
+---
 
-![Students](./.github/students.gif)
+## Desafio 5-1: Refatorando aplicação e configurando o BD ✅ 
+
+## 🔖 Atividades
+
+Esse é o primeiro desafio de uma sequência que irá implementar o banco de dados na aplicação desenvolvida no módulo anterior. 
+
+Nessa etapa, você deve refatorar o código da sua aplicação e preparar o seu ambiente para trabalhar com banco de dados.
+
+## 📚 Conceitos estudados
+
+- **Queries básicas**
+- **Estrutura de pastas**
+- **Configuração PostgreSQL**
+
+---
+
+## Desafio 5-2: Interagindo com o BD ✅ 
+
+Nessa etapa, você deve refatorar os CRUDs dos professores e estudantes para que eles utilizem o banco de dados.
+
+## 📚 Conceitos estudados
+
+- **INSERT, SELECT, UPDATE, DELETE**
+- **ORDER BY**
+- **Criação de Models**
+
+---
+
+## Desafio 5-3: Relacionamentos e filtros no BD ✅ 
+
+## 🔖 Atividades
+
+Nessa etapa, você deve criar um relacionamento entre o professor e o estudante. Além disso, deve-se implementar filtros na listagem da tabela de professores.
+
+## 📚 Conceitos estudados
+
+- **Relacionamentos**
+- **Filtros**
+- **Query params**
+- **ILIKE**
+
+---
+## Desafio 5-4: Paginação de resultados no BD ✅ 
+
+## 🔖 Atividades
+
+Nessa etapa, você deve implementar a lógica de paginação dos resultados do BD.
+
+## 📚 Conceitos estudados
+
+- **LIMIT / OFFSET**
+- **Lógica de programação**
+- **Subquery**
+- **JavaScript para renderizar o HTML**
+
+---
+
+<h1 align="center"> Resultados finais 📷 </h1>
+
+**Barra de navegação 🧭**
+
+![navbar](/.github/navbar.gif)
+
+**Professores 👨‍🏫👩‍🏫**
+
+![teachers](/.github/teachers.png)
+
+**Estudantes 👨‍🎓👩‍🎓**
+
+![students](/.github/students.png)
+
+**Card do professor 🎴**
+
+![teacher-card](/.github/teacher-card.png)
+
+**Card do estudante 🃏**
+
+![student-card](/.github/student-card.png)
+
+**Filtro 🥅**
+
+![filter](/.github/filter.gif)
+
+**Paginação 📟**
+
+![pagination](/.github/pagination.gif)
 
 ---
 
