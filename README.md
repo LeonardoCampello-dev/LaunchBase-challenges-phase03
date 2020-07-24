@@ -37,7 +37,7 @@ Os desafios foram feitos usando as seguintes tecnologias
 - [x] [Nunjucks](https://mozilla.github.io/nunjucks/)
 - [x] [PostgreSQL](https://www.postgresql.org/)
 
-### 📕 Libraries
+### 📕 Bibliotecas
 
 - [x] [Browsersync](https://www.browsersync.io/)
 - [x] [npm-run-all](https://www.npmjs.com/package/npm-run-all)
@@ -218,7 +218,7 @@ Nessa etapa, você deve implementar a lógica de paginação dos resultados do B
 
 **Barra de navegação 🧭**
 
-![navbar](/.github/navbar.gif)
+![navbar](.github/navbar.gif)
 
 **Professores 👨‍🏫👩‍🏫**
 
