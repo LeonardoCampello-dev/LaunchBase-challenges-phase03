@@ -216,33 +216,25 @@ Nessa etapa, você deve implementar a lógica de paginação dos resultados do B
 
 <h1 align="center"> Resultados finais 📷 </h1>
 
-**Barra de navegação 🧭**
-
-![navbar](.github/navbar.gif)
-
 **Professores 👨‍🏫👩‍🏫**
 
-![teachers](/.github/teachers.png)
+![teachers](./.github/teachers.png)
 
 **Estudantes 👨‍🎓👩‍🎓**
 
-![students](/.github/students.png)
+![students](.github/students.png)
 
 **Card do professor 🎴**
 
-![teacher-card](/.github/teacher-card.png)
+![teacher](.github/teacher.png)
 
 **Card do estudante 🃏**
 
-![student-card](/.github/student-card.png)
+![student](./.github/student.png)
 
 **Filtro 🥅**
 
-![filter](/.github/filter.gif)
-
-**Paginação 📟**
-
-![pagination](/.github/pagination.gif)
+![filter](./.github/filter.png)
 
 ---
 
