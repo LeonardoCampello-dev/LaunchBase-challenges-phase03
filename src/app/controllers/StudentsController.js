@@ -24,7 +24,7 @@ module.exports = {
                     student.school_year = grade(student.school_year)
                 }
 
-                return res.render("students/index", { filter, pagination, students })
+                return res.render('students/index', { filter, pagination, students })
             }
         }
 
@@ -32,14 +32,14 @@ module.exports = {
     },
     create(req, res) {
         Student.teachersSelectOptions((options) => {
-            return res.render("students/create", { teachersSelectOptions: options })
+            return res.render('students/create', { teachersSelectOptions: options })
         })
     },
     post(req, res) {
         const keys = Object.keys(req.body)
 
         for (let key of keys) {
-            if (req.body[key] == "") return res.send("Por favor, preencha todos os campos do formulário!")
+            if (req.body[key] == '') return res.send('Por favor, preencha todos os campos do formulário!')
         }
 
         Student.create(req.body, (student) => {
@@ -48,13 +48,13 @@ module.exports = {
     },
     show(req, res) {
         Student.find(req.params.id, (student) => {
-            if (!student) return res.send("Aluno não encontrado!")
+            if (!student) return res.send('Aluno não encontrado!')
 
             student.birth = date(student.birth).bDay
             student.school_year = grade(student.school_year)
 
             Student.teachersSelectOptions((options) => {
-                return res.render("students/show", { student, teachersSelectOptions: options })
+                return res.render('students/show', { student, teachersSelectOptions: options })
             })
         })
     },
@@ -62,16 +62,16 @@ module.exports = {
         const keys = Object.keys(req.body)
 
         for (let key of keys) {
-            if (req.body[key] == "") return res.send("Por favor, preencha todos os campos do formulário!")
+            if (req.body[key] == '') return res.send('Por favor, preencha todos os campos do formulário!')
         }
 
         Student.find(req.params.id, (student) => {
-            if (!student) return res.send("Aluno não encontrado!")
+            if (!student) return res.send('Aluno não encontrado!')
 
             student.birth = date(student.birth).iso
 
             Student.teachersSelectOptions((options) => {
-                return res.render("students/edit", { student, teachersSelectOptions: options })
+                return res.render('students/edit', { student, teachersSelectOptions: options })
             })
         })
     },
@@ -82,7 +82,7 @@ module.exports = {
     },
     delete(req, res) {
         Student.delete(req.body.id, () => {
-            return res.redirect("/students")
+            return res.redirect('/students')
         })
     }
 }

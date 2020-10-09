@@ -109,8 +109,8 @@ module.exports = {
     paginate(params) {
         let { filter, limit, offset, callback } = params
 
-        let query = "",
-            filterQuery = "",
+        let query = '',
+            filterQuery = '',
             totalQuery = `(
                 SELECT count (*) FROM teachers
             ) AS total`
