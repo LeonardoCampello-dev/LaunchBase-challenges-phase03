@@ -2,14 +2,12 @@ const db = require('../../config/db')
 const { date } = require('../../lib/utils')
 
 module.exports = {
-    all(callback) {
-        db.query(`SELECT * FROM students`, (err, results) => {
-            if (err) throw `Database error! ${err}`
+    async all() {
+        const results = await db.query(`SELECT * FROM students`)
 
-            callback(results.rows)
-        })
+        return results.rows
     },
-    create(data, callback) {
+    async create(data) {
         const query = `
         INSERT INTO students (
             avatar_url,
@@ -33,13 +31,11 @@ module.exports = {
             data.teacher
         ]
 
-        db.query(query, values, (err, results) => {
-            if (err) throw `Database error! ${err}`
+        const results = await db.query(query, values)
 
-            callback(results.rows[0])
-        })
+        return results.rows[0].id
     },
-    find(id, callback) {
+    async find(id) {
         const query = `
         SELECT students.*, teachers.name AS teacher_name 
         FROM students
@@ -47,13 +43,11 @@ module.exports = {
         WHERE students.id = $1
         `
 
-        db.query(query, [id], (err, results) => {
-            if (err) throw `Database error! ${err}`
+        const results = await db.query(query, [id])
 
-            callback(results.rows[0])
-        })
+        return results.rows[0]
     },
-    update(data, callback) {
+    update(data) {
         const query = `
         UPDATE students SET
             avatar_url = ($1),
@@ -77,26 +71,15 @@ module.exports = {
             data.id
         ]
 
-        db.query(query, values, (err, results) => {
-            if (err) throw `Database error! ${err}`
-
-            callback()
-        })
+        return db.query(query, values)
     },
-    delete(id, callback) {
-        db.query(`DELETE FROM students WHERE id = $1`, [id], (err, results) => {
-            if (err) throw `Database error! ${err}`
-
-            return callback()
-        })
+    delete(id) {
+        return db.query(`DELETE FROM students WHERE id = $1`, [id])
     },
-    teachersSelectOptions(callback) {
+    async teachersSelectOptions() {
+        const results = await db.query(`SELECT name, id FROM teachers`)
 
-        db.query(`SELECT name, id FROM teachers`, (err, results) => {
-            if (err) throw `Database error! ${err}`
-
-            callback(results.rows)
-        })
+        return results.rows
     },
     paginate(params) {
         let { filter, limit, offset, callback } = params

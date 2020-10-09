@@ -30,60 +30,81 @@ module.exports = {
 
         Student.paginate(params)
     },
-    create(req, res) {
-        Student.teachersSelectOptions((options) => {
-            return res.render('students/create', { teachersSelectOptions: options })
-        })
-    },
-    post(req, res) {
-        const keys = Object.keys(req.body)
+    async create(req, res) {
+        try {
+            const teachersSelectOptions = await Student.teachersSelectOptions()
 
-        for (let key of keys) {
-            if (req.body[key] == '') return res.send('Por favor, preencha todos os campos do formulário!')
+            return res.render('students/create', { teachersSelectOptions })
+        } catch (error) {
+            console.error(error)
         }
-
-        Student.create(req.body, (student) => {
-            return res.redirect(`/students/${student.id}`)
-        })
     },
-    show(req, res) {
-        Student.find(req.params.id, (student) => {
+    async post(req, res) {
+        try {
+            const keys = Object.keys(req.body)
+
+            for (let key of keys) {
+                if (req.body[key] == '') return res.send('Por favor, preencha todos os campos do formulário!')
+            }
+
+            const studentId = await Student.create(req.body)
+
+            return res.redirect(`/students/${studentId}`)
+        } catch (error) {
+            console.error(error)
+        }
+    },
+    async show(req, res) {
+        try {
+            const student = await Student.find(req.params.id)
+
             if (!student) return res.send('Aluno não encontrado!')
 
             student.birth = date(student.birth).bDay
             student.school_year = grade(student.school_year)
 
-            Student.teachersSelectOptions((options) => {
-                return res.render('students/show', { student, teachersSelectOptions: options })
-            })
-        })
-    },
-    edit(req, res) {
-        const keys = Object.keys(req.body)
+            const teachersSelectOptions = await Student.teachersSelectOptions()
 
-        for (let key of keys) {
-            if (req.body[key] == '') return res.send('Por favor, preencha todos os campos do formulário!')
+            return res.render('students/show', { student, teachersSelectOptions })
+        } catch (error) {
+            console.error(error)
         }
+    },
+    async edit(req, res) {
+        try {
+            const student = await Student.find(req.params.id)
 
-        Student.find(req.params.id, (student) => {
             if (!student) return res.send('Aluno não encontrado!')
 
-            student.birth = date(student.birth).iso
+            student.birth = date(student.birth).format
+            student.school_year = grade(student.school_year)
 
-            Student.teachersSelectOptions((options) => {
-                return res.render('students/edit', { student, teachersSelectOptions: options })
-            })
-        })
+            const teachersSelectOptions = await Student.teachersSelectOptions()
+
+            return res.render('students/show', { student, teachersSelectOptions })
+        } catch (error) {
+            console.error(error)
+        }
     },
-    update(req, res) {
-        Student.update(req.body, () => {
+    async update(req, res) {
+        try {
+            const keys = Object.keys(req.body)
+
+            for (let key of keys) {
+                if (req.body[key] == '') return res.send('Por favor, preencha todos os campos do formulário!')
+            }
+
+            await Student.update(req.body)
+
             return res.redirect(`/students/${req.body.id}`)
-        })
+        } catch (error) {
+            console.error(error)
+        }
     },
-    delete(req, res) {
-        Student.delete(req.body.id, () => {
-            return res.redirect('/students')
-        })
+    async delete(req, res) {
+        await Student.delete(req.body.id)
+
+        return res.redirect('/students')
     }
 }
 
