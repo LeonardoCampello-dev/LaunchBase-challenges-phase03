@@ -2,7 +2,7 @@ const Teacher = require('../models/Teacher')
 const { age, date } = require('../../lib/utils')
 
 module.exports = {
-    index(req, res) {
+    async index(req, res) {
         let { filter, page, limit } = req.query
 
         page = page || 1
@@ -11,77 +11,75 @@ module.exports = {
 
         const params = {
             filter,
-            page,
             limit,
-            offset,
-            callback(teachers) {
-                const pagination = {
-                    total: Math.ceil(teachers[0].total / limit),
-                    page
-                }
-
-                for (let teacher of teachers) {
-                    teacher.subjects_taught = teacher.subjects_taught.split(',')
-                }
-
-                return res.render('teachers/index', { filter, pagination, teachers })
-            }
+            offset
         }
 
-        Teacher.paginate(params)
+        const teachers = await Teacher.paginate(params)
+
+        if (!teachers) return res.send('Professores não encontrados!')
+
+        const pagination = {
+            total: Math.ceil(teachers[0].total / limit),
+            page
+        }
+
+        for (let teacher of teachers) {
+            teacher.subjects_taught = teacher.subjects_taught.split(',')
+        }
+
+        return res.render('teachers/index.njk', { filter, pagination, teachers })
     },
     create(req, res) {
-        return res.render('teachers/create')
+        return res.render('teachers/create.njk')
     },
-    post(req, res) {
+    async post(req, res) {
         const keys = Object.keys(req.body)
 
         for (let key of keys) {
             if (req.body[key] == '') return res.send('Por favor, preencha todos os campos do formulário!')
         }
 
-        Teacher.create(req.body, (teacher) => {
-            return res.redirect(`/teachers/${teacher.id}`)
-        })
+        const teacherId = await Teacher.create(req.body)
+
+        return res.redirect(`/teachers/${teacherId}`)
     },
-    show(req, res) {
-        Teacher.find(req.params.id, (teacher) => {
-            if (!teacher) return res.send('Professor não encontrado!')
+    async show(req, res) {
+        const teacher = await Teacher.find(req.params.id)
 
-            teacher.age = age(teacher.birth)
-            teacher.subjects_taught = teacher.subjects_taught.split(',')
+        if (!teacher) return res.send('Professor não encontrado!')
 
-            teacher.created_at = date(teacher.created_at).format
+        teacher.age = age(teacher.birth)
+        teacher.subjects_taught = teacher.subjects_taught.split(',')
+        teacher.created_at = date(teacher.created_at).format
 
-            return res.render('teachers/show', { teacher })
-        })
+        return res.render('teachers/show.njk', { teacher })
     },
-    edit(req, res) {
+    async edit(req, res) {
         const keys = Object.keys(req.body)
 
         for (let key of keys) {
             if (req.body[key] == '') return res.send('Por favor, preencha todos os campos do formulário!')
         }
 
-        Teacher.find(req.params.id, (teacher) => {
-            if (!teacher) return res.send('Professor não encontrado!')
+        const teacher = await Teacher.find(req.params.id)
 
-            teacher.birth = date(teacher.birth).iso
-            teacher.subjects_taught = teacher.subjects_taught.split(',')
+        if (!teacher) return res.send('Professor não encontrado!')
 
-            teacher.created_at = date(teacher.created_at).format
+        teacher.birth = date(teacher.birth).iso
+        teacher.subjects_taught = teacher.subjects_taught.split(',')
+        teacher.created_at = date(teacher.created_at).format
 
-            return res.render('teachers/edit', { teacher })
-        })
+        return res.render('teachers/edit.njk', { teacher })
     },
-    update(req, res) {
-        Teacher.update(req.body, () => {
-            return res.redirect(`/teachers/${req.body.id}`)
-        })
+    async update(req, res) {
+        await Teacher.update(req.body)
+
+        return res.redirect(`/teachers/${req.body.id}`)
     },
-    delete(req, res) {
-        Teacher.delete(req.body.id, () => {
-            return res.redirect('/teachers')
-        })
+    async delete(req, res) {
+        await Teacher.delete(req.body.id)
+
+        return res.redirect('/teachers')
     }
 }

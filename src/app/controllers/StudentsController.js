@@ -2,7 +2,7 @@ const Student = require('../models/Student')
 const { date, grade } = require('../../lib/utils')
 
 module.exports = {
-    index(req, res) {
+    async index(req, res) {
         let { filter, page, limit } = req.query
 
         page = page || 1
@@ -11,24 +11,22 @@ module.exports = {
 
         const params = {
             filter,
-            page,
             limit,
-            offset,
-            callback(students) {
-                const pagination = {
-                    total: Math.ceil(students[0].total / limit),
-                    page
-                }
-
-                for (let student of students) {
-                    student.school_year = grade(student.school_year)
-                }
-
-                return res.render('students/index', { filter, pagination, students })
-            }
+            offset
         }
 
-        Student.paginate(params)
+        const students = await Student.paginate(params)
+
+        const pagination = {
+            total: Math.ceil(students[0].total / limit),
+            page
+        }
+
+        for (let student of students) {
+            student.school_year = grade(student.school_year)
+        }
+
+        return res.render('students/index', { filter, pagination, students })
     },
     async create(req, res) {
         try {

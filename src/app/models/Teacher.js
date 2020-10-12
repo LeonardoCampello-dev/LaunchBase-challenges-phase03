@@ -2,7 +2,7 @@ const db = require('../../config/db')
 const { date } = require('../../lib/utils')
 
 module.exports = {
-    all(callback) {
+    async all() {
         const query = `
         SELECT teachers.*, count(students) AS total_students
         FROM teachers
@@ -11,13 +11,11 @@ module.exports = {
         ORDER BY teachers.id
         `
 
-        db.query(query, (err, results) => {
-            if (err) throw `Database error! ${err}`
+        const results = await db.query(query)
 
-            callback(results.rows)
-        })
+        return results.rows
     },
-    create(data, callback) {
+    async create(data) {
         const query = `
         INSERT INTO teachers (
             avatar_url,
@@ -41,20 +39,16 @@ module.exports = {
             date(Date.now()).iso
         ]
 
-        db.query(query, values, (err, results) => {
-            if (err) throw `Database error! ${err}`
+        const results = await db.query(query, values)
 
-            callback(results.rows[0])
-        })
+        return results.rows[0].id
     },
-    find(id, callback) {
-        db.query(`SELECT * FROM teachers WHERE id = $1`, [id], (err, results) => {
-            if (err) throw `Database error! ${err}`
+    async find(id) {
+        const results = await db.query(`SELECT * FROM teachers WHERE id = $1`, [id])
 
-            callback(results.rows[0])
-        })
+        return results.rows[0]
     },
-    findBy(filter, callback) {
+    async findBy(filter) {
         const query = `
         SELECT teachers.*, count(students) AS total_students
         FROM teachers
@@ -65,13 +59,11 @@ module.exports = {
         ORDER BY teachers.id
         `
 
-        db.query(query, (err, results) => {
-            if (err) throw `Database error! ${err}`
+        const results = await db.query(query)
 
-            callback(results.rows)
-        })
+        return results.rows
     },
-    update(data, callback) {
+    update(data) {
         const query = `
         UPDATE teachers SET
             avatar_url = ($1),
@@ -93,22 +85,12 @@ module.exports = {
             data.id
         ]
 
-        db.query(query, values, (err, results) => {
-            if (err) throw `Database error! ${err}`
-
-            callback()
-        })
+        return db.query(query, values)
     },
-    delete(id, callback) {
-        db.query(`DELETE FROM teachers WHERE id = $1`, [id], (err, results) => {
-            if (err) throw `Database error! ${err}`
-
-            return callback()
-        })
+    delete(id) {
+        return db.query(`DELETE FROM teachers WHERE id = $1`, [id])
     },
-    paginate(params) {
-        let { filter, limit, offset, callback } = params
-
+    async paginate({ filter, limit, offset }) {
         let query = '',
             filterQuery = '',
             totalQuery = `(
@@ -134,10 +116,8 @@ module.exports = {
         GROUP BY teachers.id LIMIT $1 OFFSET $2
         `
 
-        db.query(query, [limit, offset], (err, results) => {
-            if (err) throw `Database error! ${err}`
+        const results = await db.query(query, [limit, offset])
 
-            callback(results.rows)
-        })
+        return results.rows
     }
 }
