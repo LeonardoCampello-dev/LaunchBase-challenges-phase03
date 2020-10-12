@@ -1,6 +1,6 @@
 
 <h1 align="center">
-    <img src="https://camo.githubusercontent.com/268b1344409fac98c4eeda520482b6910c4ddcba/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f676f6c64656e2d77696e642f626f6f7463616d702d6c61756e6368626173652f6c6f676f2e706e67">
+    <img src="https://camo.githubusercontent.com/268b1344409fac98c4eeda520482b6910c4ddcba/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f676f6c64656e2d77696e642f626f6f7463616d702d6c61756e6368626173652f6c6f676f2e706e67" width="300">
 </h1>
 
 ![Author](https://img.shields.io/badge/Autor-Leonardo%20Campello-orange)
@@ -216,13 +216,9 @@ Nessa etapa, você deve implementar a lógica de paginação dos resultados do B
 
 <h1 align="center"> Resultados finais 📷 </h1>
 
-**Professores 👨‍🏫👩‍🏫**
+**Tabela 👨‍🏫👩‍🏫**
 
 ![teachers](./.github/teachers.png)
-
-**Estudantes 👨‍🎓👩‍🎓**
-
-![students](.github/students.png)
 
 **Card do professor 🎴**
 
@@ -231,10 +227,6 @@ Nessa etapa, você deve implementar a lógica de paginação dos resultados do B
 **Card do estudante 🃏**
 
 ![student](./.github/student.png)
-
-**Filtro 🥅**
-
-![filter](./.github/filter.png)
 
 ---
 
