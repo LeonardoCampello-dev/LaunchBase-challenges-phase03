@@ -1,0 +1,41 @@
+header {
+    background-color: var(--gray-color);
+    width: 100%;
+    padding: 32px;
+
+    display: flex;
+    align-items: center;
+}
+
+header span img {
+    width: 48px;
+    height: 48px;
+}
+
+.links {
+    text-align: center;
+    font-size: 24px;
+
+    margin-left: 48px;
+}
+
+.links a {
+    color: var(--primary-color);
+    position: relative;
+}
+
+.links a:hover {
+    color: var(--secondary-color);
+    transition: .2s;
+}
+
+a.active {
+    font-weight: bold;
+    border-bottom: 2px solid var(--secondary-color);
+    border-radius: 5%;
+}
+
+.links a + a {
+    margin-left: 24px;
+}
+

@@ -1,0 +1,30 @@
+.pagination {
+    text-align: center;
+}
+
+.pagination a {
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+.pagination a:hover {
+    border-color: var(--bottom-line);
+    transition: .2s;
+}
+
+.pagination a, 
+.pagination span {
+    color: #fff;
+    
+    padding: 4px;
+    
+    font-size: 14px;
+    letter-spacing: .5px;
+    font-weight: bold;
+    
+    margin-right: 8px;
+}
+
+.pagination span {
+    color: var(--primary-color);
+}
