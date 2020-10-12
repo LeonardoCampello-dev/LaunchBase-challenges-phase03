@@ -26,13 +26,13 @@ module.exports = {
             student.school_year = grade(student.school_year)
         }
 
-        return res.render('students/index', { filter, pagination, students })
+        return res.render('students/index.njk', { filter, pagination, students })
     },
     async create(req, res) {
         try {
             const teachersSelectOptions = await Student.teachersSelectOptions()
 
-            return res.render('students/create', { teachersSelectOptions })
+            return res.render('students/create.njk', { teachersSelectOptions })
         } catch (error) {
             console.error(error)
         }
@@ -63,7 +63,7 @@ module.exports = {
 
             const teachersSelectOptions = await Student.teachersSelectOptions()
 
-            return res.render('students/show', { student, teachersSelectOptions })
+            return res.render('students/show.njk', { student, teachersSelectOptions })
         } catch (error) {
             console.error(error)
         }
@@ -74,12 +74,12 @@ module.exports = {
 
             if (!student) return res.send('Aluno não encontrado!')
 
-            student.birth = date(student.birth).format
+            student.birth = date(student.birth).iso
             student.school_year = grade(student.school_year)
 
             const teachersSelectOptions = await Student.teachersSelectOptions()
 
-            return res.render('students/show', { student, teachersSelectOptions })
+            return res.render('students/edit.njk', { student, teachersSelectOptions })
         } catch (error) {
             console.error(error)
         }

@@ -1,28 +1,47 @@
 <div class="item">
     <div>Avatar URL</div>
     <div>
-        <input type="url" name="avatar_url" placeholder="http://" value="{{ student.avatar_url }}">
+        <input 
+            type="url" 
+            name="avatar_url" 
+            placeholder="http://" 
+            value="{{ student.avatar_url }}"
+        >
     </div>
 </div>
 
 <div class="item">
     <div>Nome Completo</div>
     <div>
-        <input type="text" name="name" placeholder="Seu nome aqui" value="{{ student.name }}">
+        <input 
+            type="text" 
+            name="name" 
+            placeholder="Seu nome aqui" 
+            value="{{ student.name }}"
+        >
     </div>
 </div>
 
 <div class="item">
     <div>Email</div>
     <div>
-        <input type="email" name="email" placeholder="example@classmanager.com" value="{{ student.email }}">
+        <input 
+            type="email" 
+            name="email" 
+            placeholder="example@classmanager.com" 
+            value="{{ student.email }}"
+        >
     </div>
 </div>
 
 <div class="item">
     <div>Data de nascimento</div>
     <div>
-        <input type="date" name="birth" value="{{ student.birth }}">
+        <input 
+            type="date" 
+            name="birth" 
+            value="{{ student.birth }}"
+        >
     </div>
 </div>
 
@@ -61,7 +80,11 @@
 <div class="item">
     <div>Carga horária semanal</div>
     <div>
-        <input type="number" name="workload" value="{{ student.workload }}">
+        <input 
+            type="number" 
+            name="workload" 
+            value="{{ student.workload }}"
+        >
     </div>
 </div>
 
@@ -69,11 +92,17 @@
     <div>Professor</div>
     <div>
         <select name="teacher">
+            
         {% for teacher in teachersSelectOptions %}
+        
             <option value="{{ teacher.id }}" 
-                {% if student.teacher_id == student.teacher_id %} selected {% endif %}> {{ teacher.name }}
+                {% if student.teacher_id == student.teacher_id %} 
+                    selected 
+                {% endif %}> {{ teacher.name }}
             </option>
+
         {% endfor %}
+        
         </select>
     </div>
 </div>

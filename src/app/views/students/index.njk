@@ -2,49 +2,55 @@
 
 {% block content %}
 
-    <div class="card table-container">
-        
-        <div class="header">
-            <a href="/students/create">Novo estudante</a>
+<div class="card table-container">
+    
+    <div class="header">
+        <a href="/students/create">Novo estudante</a>
 
-            <form action="/students" method="GET">
-                <input type="text" name="filter" placeholder="Nome ou Email" value="{{ filter }}">
-                <button type="submit">Filtrar</button>
-            </form>
-        </div>
-
-        <table width="100%">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Ano escolar</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for student in students %}
-                    <tr>
-                        <td>
-                            <span style="background-image: url({{ student.avatar_url }})"></span>
-                            {{ student.name }}
-                        </td>
-
-                        <td>
-                            <a href="mailto:{{ student.email }}">{{ student.email }}</a>
-                        </td>
-                        <td>{{ student.school_year }}</td>
-
-                        <td>
-                            <a href="/students/{{ student.id }}">Ver</a>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-
-        <div class="pagination" data-page="{{ pagination.page }}" data-total="{{ pagination.total }}" data-filter="{{ filter }}"></div>
-
+        <form action="/students" method="GET">
+            <input 
+                type="text" 
+                name="filter" 
+                placeholder="Nome ou Email" 
+                value="{{ filter }}"
+            >
+            
+            <button type="submit">Filtrar</button>
+        </form>
     </div>
+
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Ano escolar</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+                <tr>
+                    <td>
+                        <span style="background-image: url({{ student.avatar_url }})"></span>
+                        {{ student.name }}
+                    </td>
+
+                    <td>
+                        <a href="mailto:{{ student.email }}">{{ student.email }}</a>
+                    </td>
+                    <td>{{ student.school_year }}</td>
+
+                    <td>
+                        <a href="/students/{{ student.id }}">Ver</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% include "parts/pagination.njk" %}
+
+</div>
 
 {% endblock content %}

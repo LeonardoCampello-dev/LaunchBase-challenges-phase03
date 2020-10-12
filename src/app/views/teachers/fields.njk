@@ -1,21 +1,35 @@
 <div class="item">
     <div>Avatar URL</div>
     <div>
-        <input type="url" name="avatar_url" placeholder="http://" value="{{ teacher.avatar_url }}">
+        <input 
+            type="url" 
+            name="avatar_url" 
+            placeholder="http://" 
+            value="{{ teacher.avatar_url }}"
+        >
     </div>
 </div>
 
 <div class="item">
     <div>Nome Completo</div>
     <div>
-        <input type="text" name="name" placeholder="Seu nome aqui" value="{{ teacher.name }}">
+        <input 
+            type="text" 
+            name="name" 
+            placeholder="Seu nome aqui" 
+            value="{{ teacher.name }}"
+        >
     </div>
 </div>
 
 <div class="item">
     <div>Data de nascimento</div>
     <div>
-        <input type="date" name="birth" value="{{ teacher.birth }}">
+        <input 
+            type="date" 
+            name="birth" 
+            value="{{ teacher.birth }}"
+        >
     </div>
 </div>
 
@@ -41,14 +55,16 @@
         <span>
             <input type="checkbox" 
                    name="class_type" 
-                   value="Presencial" {% if teacher.class_type == "Presencial"%} 
+                   value="Presencial" 
+                   {% if teacher.class_type == "Presencial"%} 
                         checked="checked" 
                    {% endif %}> Presencial
         </span>
         <span>
             <input type="checkbox" 
                    name="class_type" 
-                   value=" À distância" {% if teacher.class_type == " À distância" %} 
+                   value=" À distância" 
+                   {% if teacher.class_type == " À distância" %} 
                         checked="checked" 
                    {% endif %}> À distância
         </span>
@@ -58,7 +74,12 @@
 <div class="item">
     <div>Área de atuação</div>
     <div>
-        <input type="text" name="subjects_taught" placeholder="Separe as áreas de atuação por vírgula" value="{{ teacher.subjects_taught }}">
+        <input 
+            type="text" 
+            name="subjects_taught" 
+            placeholder="Separe as áreas de atuação por vírgula" 
+            value="{{ teacher.subjects_taught }}"
+        >
     </div>
 </div>
 <button type="submit"> Salvar</button>

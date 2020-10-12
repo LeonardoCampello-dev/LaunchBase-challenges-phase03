@@ -4,7 +4,10 @@
 
 <div class="card">
 
-    <section class="avatar" style="background: url({{ student.avatar_url }}) no-repeat center center / cover"></section>
+    <section 
+        class="avatar" 
+        style="background: url({{ student.avatar_url }}) no-repeat center center / cover"
+    ></section>
 
     <section class="details">
 
@@ -13,17 +16,27 @@
 
             {% include "students/fields.njk" %}
 
-            <input type="hidden" name="id" value="{{ student.id }}">
+            <input 
+                type="hidden" 
+                name="id" 
+                value="{{ student.id }}"
+            >
         </form>
 
         <form id="form-delete" method="POST" action="/students?_method=DELETE">
-            <input type="hidden" name="id" value="{{ student.id }}">
+        
+            <input 
+                type="hidden" 
+                name="id" 
+                value="{{ student.id }}"
+            >
             <button type="submit">Deletar</button>
+
         </form>
 
     </section>
     
-{% include "../confirm.njk" %}
+    {% include "../confirm.njk" %}
     
 </div>
 {% endblock content %}

@@ -2,22 +2,15 @@
 <html>
 
     <head>
-        {% block head %}
-            <title>Class Manager</title>
-        {% endblock %}
+        <title>Class Manager</title>
         
-        <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="/styles/main.css">
+        {% include "parts/styles.njk" %}
+
     </head>
 
     <body>
-        <header>
-            <span><img src="/assets/logo.svg" alt="Logo"></span>
-            <div class="links">
-                <a href="/teachers">Professores</a>
-                <a href="/students">Estudantes</a>
-            </div>
-        </header>
+
+        {% include "parts/header.njk" %}
 
         {% block content %}{% endblock %}        
 
@@ -25,4 +18,5 @@
 
     <script src="/scripts/menu.js"></script>
     <script src="/scripts/pagination.js"></script>
+    
 </html>
