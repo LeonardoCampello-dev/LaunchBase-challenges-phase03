@@ -4,7 +4,7 @@
 
 .pagination a {
     border: 1px solid var(--primary-color);
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 .pagination a:hover {
@@ -16,7 +16,7 @@
 .pagination span {
     color: #fff;
     
-    padding: 4px;
+    padding: 6px;
     
     font-size: 14px;
     letter-spacing: .5px;
