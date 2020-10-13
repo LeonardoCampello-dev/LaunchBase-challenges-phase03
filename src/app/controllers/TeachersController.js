@@ -40,7 +40,23 @@ module.exports = {
             if (req.body[key] == '') return res.send('Por favor, preencha todos os campos do formulário!')
         }
 
-        const teacherId = await Teacher.create(req.body)
+        const {
+            avatar_url,
+            name,
+            birth,
+            educational_level,
+            class_type,
+            subjects_taught
+        } = req.body
+
+        const teacherId = await Teacher.create({
+            avatar_url,
+            name,
+            birth,
+            educational_level,
+            class_type,
+            subjects_taught
+        })
 
         return res.redirect(`/teachers/${teacherId}`)
     },
@@ -73,7 +89,29 @@ module.exports = {
         return res.render('teachers/edit.njk', { teacher })
     },
     async update(req, res) {
-        await Teacher.update(req.body)
+        const keys = Object.keys(req.body)
+
+        for (let key of keys) {
+            if (req.body[key] == '') return res.send('Por favor, preencha todos os campos do formulário!')
+        }
+
+        const {
+            avatar_url,
+            name,
+            birth,
+            educational_level,
+            class_type,
+            subjects_taught
+        } = req.body
+
+        await Teacher.update(req.body.id, {
+            avatar_url,
+            name,
+            birth,
+            educational_level,
+            class_type,
+            subjects_taught
+        })
 
         return res.redirect(`/teachers/${req.body.id}`)
     },

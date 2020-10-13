@@ -45,7 +45,25 @@ module.exports = {
                 if (req.body[key] == '') return res.send('Por favor, preencha todos os campos do formulário!')
             }
 
-            const studentId = await Student.create(req.body)
+            const {
+                avatar_url,
+                name,
+                email,
+                birth,
+                school_year,
+                workload,
+                teacher
+            } = req.body
+
+            const studentId = await Student.create({
+                avatar_url,
+                name,
+                email,
+                birth,
+                school_year,
+                workload,
+                teacher_id: teacher
+            })
 
             return res.redirect(`/students/${studentId}`)
         } catch (error) {
@@ -92,7 +110,25 @@ module.exports = {
                 if (req.body[key] == '') return res.send('Por favor, preencha todos os campos do formulário!')
             }
 
-            await Student.update(req.body)
+            const {
+                avatar_url,
+                name,
+                email,
+                birth,
+                school_year,
+                workload,
+                teacher
+            } = req.body
+
+            await Student.update(req.body.id, {
+                avatar_url,
+                name,
+                email,
+                birth,
+                school_year,
+                workload,
+                teacher_id: teacher
+            })
 
             return res.redirect(`/students/${req.body.id}`)
         } catch (error) {
