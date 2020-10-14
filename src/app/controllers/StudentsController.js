@@ -26,7 +26,12 @@ module.exports = {
             student.school_year = grade(student.school_year)
         }
 
-        return res.render('students/index.njk', { filter, pagination, students })
+        return res.render('students/index.njk', { 
+            filter, 
+            pagination, 
+            students,
+            success: req.query.success
+        })
     },
     async create(req, res) {
         try {
@@ -65,7 +70,7 @@ module.exports = {
                 teacher_id: teacher
             })
 
-            return res.redirect(`/students/${studentId}`)
+            return res.redirect(`/students/${studentId}?success=Cadastro realizado com sucesso!`)
         } catch (error) {
             console.error(error)
         }
@@ -81,7 +86,11 @@ module.exports = {
 
             const teachersSelectOptions = await Student.teachersSelectOptions()
 
-            return res.render('students/show.njk', { student, teachersSelectOptions })
+            return res.render('students/show.njk', { 
+                student, 
+                teachersSelectOptions,
+                success: req.query.success
+            })
         } catch (error) {
             console.error(error)
         }
@@ -130,7 +139,7 @@ module.exports = {
                 teacher_id: teacher
             })
 
-            return res.redirect(`/students/${req.body.id}`)
+            return res.redirect(`/students/${req.body.id}?success=Perfil atualizado!`)
         } catch (error) {
             console.error(error)
         }
@@ -138,7 +147,7 @@ module.exports = {
     async delete(req, res) {
         await Student.delete(req.body.id)
 
-        return res.redirect('/students')
+        return res.redirect('/students?success=Perfil deletado!')
     }
 }
 

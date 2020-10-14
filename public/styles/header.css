@@ -1,15 +1,15 @@
 header {
-    background-color: var(--gray-color);
+    background-color: #fff;
     width: 100%;
-    padding: 32px;
+    padding: 24px;
 
     display: flex;
     align-items: center;
 }
 
 header span img {
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
 }
 
 .links {

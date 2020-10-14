@@ -28,7 +28,12 @@ module.exports = {
             teacher.subjects_taught = teacher.subjects_taught.split(',')
         }
 
-        return res.render('teachers/index.njk', { filter, pagination, teachers })
+        return res.render('teachers/index.njk', {
+            filter,
+            pagination,
+            teachers,
+            success: req.query.success
+        })
     },
     create(req, res) {
         return res.render('teachers/create.njk')
@@ -58,7 +63,7 @@ module.exports = {
             subjects_taught
         })
 
-        return res.redirect(`/teachers/${teacherId}`)
+        return res.redirect(`/teachers/${teacherId}?success=Cadastro realizado com sucesso!`)
     },
     async show(req, res) {
         const teacher = await Teacher.find(req.params.id)
@@ -69,7 +74,7 @@ module.exports = {
         teacher.subjects_taught = teacher.subjects_taught.split(',')
         teacher.created_at = date(teacher.created_at).format
 
-        return res.render('teachers/show.njk', { teacher })
+        return res.render('teachers/show.njk', { teacher, success: req.query.success })
     },
     async edit(req, res) {
         const keys = Object.keys(req.body)
@@ -113,11 +118,11 @@ module.exports = {
             subjects_taught
         })
 
-        return res.redirect(`/teachers/${req.body.id}`)
+        return res.redirect(`/teachers/${req.body.id}?success=Perfil atualizado!`)
     },
     async delete(req, res) {
         await Teacher.delete(req.body.id)
 
-        return res.redirect('/teachers')
+        return res.redirect('/teachers?success=Perfil deletado!')
     }
 }
