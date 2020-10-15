@@ -19,6 +19,17 @@ const educationalLevel = [
     'Doutorado'
 ]
 
+const schoolYear = [
+    '5EF',
+    '6EF',
+    '7EF',
+    '8EF',
+    '9EF',
+    '1EM',
+    '2EM',
+    '3EM'
+]
+
 async function createTeachers() {
     const teachers = []
 
@@ -27,7 +38,7 @@ async function createTeachers() {
             avatar_url: faker.image.imageUrl(),
             name: faker.name.findName(),
             birth: date(faker.date.past()).iso,
-            educational_level: educationalLevel[Math.floor(Math.random() * 3)],
+            educational_level: educationalLevel[Math.floor(Math.random() * educationalLevel.length)],
             class_type: classType[Math.round(Math.random())],
             subjects_taught: `${faker.name.jobArea()}, ${faker.name.jobArea()}, ${faker.name.jobArea()}`,
             created_at: date(new Date()).iso
@@ -39,8 +50,29 @@ async function createTeachers() {
     teachersIds = await Promise.all(teachersPromises)
 }
 
+async function createStudents() {
+    const students = []
+
+    while (students.length < totalStudents) {
+        students.push({
+            avatar_url: faker.image.imageUrl(),
+            name: faker.name.firstName(),
+            email: faker.internet.email(),
+            birth: date(faker.date.past()).iso,
+            school_year: schoolYear[Math.floor(Math.random() * schoolYear.length)], 
+            workload: Math.floor(Math.random() * 10 + 1),
+            teacher_id: teachersIds[Math.floor(Math.random() * totalTeachers)]
+        })
+    }
+
+    const studentsPromises = students.map(student => Student.create(student))
+
+    studentsIds = await Promise.all(studentsPromises)
+}
+
 async function init() {
     await createTeachers()
+    await createStudents()
 }
 
 init()
