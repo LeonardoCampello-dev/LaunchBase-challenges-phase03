@@ -1,74 +1,73 @@
 input {
-    background-color: initial;
-    
-    width: 100%;
-    font-size: 18px;
-    font-weight: bold;
+  background-color: initial;
 
-    color: #efefef;
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+
+  color: #efefef;
 }
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px rgba(0, 0, 0, 0.8) inset;
+  -webkit-box-shadow: 0 0 0 30px rgba(0, 0, 0, 0.8) inset;
 }
 
 input:-webkit-autofill {
-    -webkit-text-fill-color: #efefef !important;
+  -webkit-text-fill-color: #efefef !important;
 }
 
 input[type="checkbox"] {
-    width: initial;
-    margin-right: 4px;
+  width: initial;
+  margin-right: 4px;
 }
 
 select,
 input::placeholder {
-    color: var(--gray-color);
-    background-color: initial;
+  color: var(--gray-color);
+  background-color: initial;
 
-    font-size: 16px;
+  font-size: 16px;
 }
 
 select {
-    background-color: var(--primary-color);
+  background-color: var(--primary-color);
 
-    padding: 8px 16px;
-    border-radius: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
 }
-    
+
 a.button,
 button[type="submit"] {
-    width: 50%;
-    padding: 8px 16px;
-    background-color: var(--primary-color);
-    color: #fff;
-    
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: .7px;
+  width: 50%;
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: #fff;
 
-    border-radius: 4px;
-    
-    margin-top: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.7px;
+
+  border-radius: 4px;
+
+  margin-top: 16px;
 }
 
 a.button {
-    width: 100%;
-    text-align: center;
-    display: inline-block;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
 }
 
 .details > button {
-    width: 100%;
+  width: 100%;
 }
 
-
 #form-delete button[type="submit"] {
-    width: 185px;
+  width: 185px;
 
-    background-color: var(--secondary-color);
-    position: absolute;
-    
-    right: 32px;
-    bottom: 32px;
+  background-color: var(--secondary-color);
+  position: absolute;
+
+  right: 32px;
+  bottom: 32px;
 }
